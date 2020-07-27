@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <img src="https://elections.pottcounty-ia.gov/images/news/voter_id_and_election_law_changes_49502.jpg" width="70"
+        height="40" class="d-inline-block align-top" alt="no img">
+      Voter Card
+    </a>
+  </div>
+</nav>
+<h2 class="one" *ngIf="check">If you don't have voter card click on register button <button class="btn btn-success"
+    routerLink="/register" (click)="register()">Register</button> </h2>
+<router-outlet></router-outlet>
+<div class="container-fluid" *ngIf="expression">
+  <div class="container">
+    <app-search></app-search>
+  </div>
+</div>
