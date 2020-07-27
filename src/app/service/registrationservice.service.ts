@@ -12,10 +12,10 @@ export class RegistrationserviceService {
 
   addVoter(formData: FormData): Observable<any> {
 
-    return this.http.post(`/register`, formData);
+    return this.http.post(`https://gentle-sands-08708.herokuapp.com/register`, formData);
   }
 
   getVoters(){
-    return this.http.get(`/getvoters`);
+    return this.http.get(`https://gentle-sands-08708.herokuapp.com/getvoters`);
   }
 }
