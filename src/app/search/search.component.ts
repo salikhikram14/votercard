@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   searchText;
   public pieChartLabels: string[] = [];
   public pieChartData: number[] = [];
-  public pieChartType: string = 'pie';
+  public pieChartType: string = 'bar';
   public pieChartColors: any[] = [{  backgroundColor: ['#3B55E6', '#EB4E36', '#43D29E', '#32CBD8', '#E8C63B', '#28C63B', '#38C63B', '#48C63B', '#58C63B', '#68C63B', '#78C63B'] }]
   example = new Array();
 

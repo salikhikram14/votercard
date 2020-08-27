@@ -1,49 +1,53 @@
 <div class="container-fluid">
     <div class="container">
-        <h1>Voter Registration</h1>
-        <form class="a" (ngSubmit)="onSubmit()" #f="ngForm">
-            <div class="form-group form-inline col-md-12">
-                <label for="name" class="col-sm-2">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Name" ngModel name="name" required>
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <h1><u>Voter Registration</u></h1>
+                <form (ngSubmit)="onSubmit()" #f="ngForm">
+                    <div class="form-group form-inline ">
+                        <label for="name">Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name" ngModel name="name" required>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="fname">Father's Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" class="form-control" id="fname" placeholder="Enter Father's Name" ngModel
+                            name="fatherName" required>
+                    </div>
+                    <div class="form-group form-inline ">
+                        <label for="gender">Gender</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <select name="gender" id="gender" class="form-control" ngModel name="gender" required>
+                            <option value=""></option>
+                            <option value="MALE">Male</option>
+                            <option value="FEMALE">Female</option>
+                            <option value="OTHERS">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="date">Date Of Birth</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="date" class="form-control" id="date" ngModel name="dateOfBirth" required max="01/01/2002">
+                    </div>
+                    <div class="form-group form-inline ">
+                        <label for="area" >Area</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" class="form-control" id="area" placeholder="Enter your area" ngModel name="area"
+                            required>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="city">City</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" class="form-control" id="city" placeholder="Enter your city" ngModel name="city"
+                            required>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="state" >State</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" class="form-control" id="state" placeholder="Enter your State" ngModel name="state"
+                            required>
+                    </div>
+                    <div class="form-group form-inline ">
+                        <label for="photo">Photo</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="file" id="photo" accept="image/*" name="photo" ngModel (change)="onFileChanged($event)" required="required">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm badge-pill b" [disabled]="!f.valid">Submit</button>
+                </form>
             </div>
-            <div class="form-group form-inline col-md-12">
-                <label for="fname" class="col-sm-2">Father's Name</label>
-                <input type="text" class="form-control" id="fname" placeholder="Enter Father's Name" ngModel
-                    name="fatherName" required>
-            </div>
-            <div class="form-group form-inline col-md-12">
-                <label for="gender" class="col-sm-2">Gender</label>
-                <select name="gender" id="gender" class="form-control" ngModel name="gender" required>
-                    <option value=""></option>
-                    <option value="MALE">Male</option>
-                    <option value="FEMALE">Female</option>
-                    <option value="OTHERS">Others</option>
-                </select>
-            </div>
-            <div class="form-group form-inline col-md-12 ">
-                <label for="date" class="col-sm-2">Date Of Birth</label>
-                <input type="date" class="form-control" id="date" ngModel name="dateOfBirth" required max="01/01/2002">
-            </div>
-            <div class="form-group form-inline col-md-12">
-                <label for="area" class="col-sm-2">Area</label>
-                <input type="text" class="form-control" id="area" placeholder="Enter your area" ngModel name="area"
-                    required>
-            </div>
-            <div class="form-group form-inline col-md-12">
-                <label for="city" class="col-sm-2">City</label>
-                <input type="text" class="form-control" id="city" placeholder="Enter your city" ngModel name="city"
-                    required>
-            </div>
-            <div class="form-group form-inline col-md-12">
-                <label for="state" class="col-sm-2">State</label>
-                <input type="text" class="form-control" id="state" placeholder="Enter your State" ngModel name="state"
-                    required>
-            </div>
-            <div class="form-group form-inline col-md-12">
-                <label for="photo" class="col-sm-2">Photo</label>
-                <input type="file" id="photo" accept="image/*" name="photo" ngModel (change)="onFileChanged($event)" required="required">
-            </div>
-            <button type="submit" class="btn btn-primary btn-sm badge-pill b" [disabled]="!f.valid">Submit</button>
-        </form>
+        </div>
     </div>
 </div>

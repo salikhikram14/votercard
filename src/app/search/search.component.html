@@ -1,38 +1,47 @@
 <div class="container-fluid">
     <div class="container">
-        <h2 style="padding-top: 15px;"><u>Voter Details</u></h2>
-        <h4 style="padding-left: 130px;">If you want to get the voter details then click on this button
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="text-align: center;"><u>Voter Details</u></h2>
+        <h4 style="text-align: center;">If you want to get the voter details then click on this button
             <button type="button" class="btn btn-small btn-warning badge-pill" (click)="getDetails()">Voter
                 Details</button></h4>
-        <input class="form-control a" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
             placeholder="Start searching for a voter by name or area">
-        <table class="table table-hover b">
-            <thead>
-                <tr>
-                    <th>VoterId</th>
-                    <th>Name</th>
-                    <th>DOB</th>
-                    <th>Area</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let voter of voters | filter : searchText">
-                    <td>{{voter.voterId}}</td>
-                    <td>{{voter.name}}</td>
-                    <td>{{voter.dateOfBirth |  date: 'dd/MM/yyyy'}}</td>
-                    <td>{{voter.area}}</td>
-                    <td>{{voter.city}}</td>
-                    <td>{{voter.state}}</td>
-                    <td><button class="btn btn-sm btn-danger badge-pill" type="button"
-                            (click)="download(voter)">Download</button></td>
-                </tr>
-            </tbody>
-        </table>
-        <div>
-            <div style="display: block;">
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>VoterId</th>
+                            <th>Name</th>
+                            <th>Area</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let voter of voters | filter : searchText">
+                            <td>{{voter.voterId}}</td>
+                            <td>{{voter.name}}</td>
+                            <td>{{voter.area}}</td>
+                            <td>{{voter.city}}</td>
+                            <td>{{voter.state}}</td>
+                            <td><button class="btn btn-sm btn-danger badge-pill" type="button"
+                                    (click)="download(voter)">Download</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="spinner-border text-success" role="status" [hidden]="voters">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
                 [colors]="pieChartColors"></canvas>
             </div>
