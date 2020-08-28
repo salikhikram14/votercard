@@ -35,7 +35,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center" *ngIf="expression">
                     <div class="spinner-grow text-success" role="status" [hidden]="voters">
                         <span class="sr-only">Loading...</span>
                         <h1>Loading... Please Wait</h1>
